@@ -60,6 +60,13 @@ p { margin: 0; }
 .btn-primary:hover { filter: brightness(1.08); }
 .btn-ghost { border-color: var(--line); color: var(--ink); background: var(--surface); }
 @media (max-width: 860px) { .nav { display: none; } .top .btn { margin-left: auto; } }
+.lang { display: flex; gap: 2px; padding: 3px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.lang button { border: 0; background: none; color: var(--muted); font: 700 0.78rem var(--body); letter-spacing: 0.04em; padding: 6px 9px; border-radius: 999px; cursor: pointer; }
+.lang button:hover { color: var(--ink); }
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+@media (max-width: 860px) { .top .lang { margin-left: auto; } .top .lang + .btn { margin-left: 0; } }
+@media (max-width: 520px) { .top .wrap { gap: 10px; } .brand { font-size: 1.2rem; } .brand img { width: 28px; height: 28px; } .top .btn { padding: 9px 13px; font-size: 0.85rem; } .lang button { padding: 6px 7px; } .top .btn { white-space: nowrap; } }
+@media (max-width: 420px) { .brand { font-size: 0; gap: 0; } }
 
 /* hero */
 .hero { padding-block: 72px 56px; }

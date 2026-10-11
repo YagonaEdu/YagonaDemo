@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Yagona — Demo</title>
-<meta name="description" content="Yagona demo-videosi, uning tavsifi va ishlayotgan prototip havolasi.">
+<meta name="description" content="Yagona demo-videosi, uning tavsifi va ishlayotgan prototip havolasi." data-i18n-attrs="content" data-ru-content="Демо-видео Yagona, его описание и ссылка на работающий прототип." data-en-content="The Yagona demo video, what it shows and a link to the working prototype.">
 <link rel="icon" type="image/png" href="/pitch/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,23 +16,23 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="/pitch"><img src="/pitch/img/logo-256.png" alt="">Yagona</a>
-    <nav class="nav" aria-label="Bo‘limlar">
-      <a href="/pitch#muammo">Muammo → Yechim</a>
-      <a href="/pitch#jamoa">Jamoa</a>
-      <a href="/pitch#yol-xaritasi">Yo‘l xaritasi</a>
-      <a href="/pitch#reja">Reja</a>
-      <a href="/demo" aria-current="page">Demo</a>
+    <nav class="nav" aria-label="Bo‘limlar" data-i18n-attrs="aria-label" data-ru-aria-label="Разделы" data-en-aria-label="Sections">
+      <a href="/pitch#muammo" data-ru="Проблема → Решение" data-en="Problem → Solution">Muammo → Yechim</a>
+      <a href="/pitch#jamoa" data-ru="Команда" data-en="Team">Jamoa</a>
+      <a href="/pitch#yol-xaritasi" data-ru="Дорожная карта" data-en="Roadmap">Yo‘l xaritasi</a>
+      <a href="/pitch#reja" data-ru="План" data-en="Plan">Reja</a>
+      <a href="/demo" aria-current="page" data-ru="Демо" data-en="Demo">Demo</a>
     </nav>
-    <a class="btn btn-primary" href="/login">Prototip ↗</a>
+    <a class="btn btn-primary" href="/login" data-ru="Прототип ↗" data-en="Prototype ↗">Prototip ↗</a>
   </div>
 </header>
 
 <main>
   <section class="hero lattice" style="padding-block:56px 48px">
     <div class="wrap">
-      <div class="kicker">Demo</div>
-      <h1 style="margin-top:12px">Yagona qanday ishlaydi</h1>
-      <p class="lead">Veb-kabinet va uchta mobil ilova: o‘quvchi, o‘qituvchi va direktor uchun. Video 4 daqiqa 44 soniya, o‘zbek tilida ovozli.</p>
+      <div class="kicker" data-ru="Демо" data-en="Demo">Demo</div>
+      <h1 style="margin-top:12px" data-ru="Как работает Yagona" data-en="How Yagona works">Yagona qanday ishlaydi</h1>
+      <p class="lead" data-ru="Веб-кабинет и три мобильных приложения: для ученика, преподавателя и директора. Видео длится 4 минуты 44 секунды, озвучка на узбекском." data-en="The web dashboard and three mobile apps: for students, teachers and the director. The video is 4 minutes 44 seconds long, narrated in Uzbek.">Veb-kabinet va uchta mobil ilova: o‘quvchi, o‘qituvchi va direktor uchun. Video 4 daqiqa 44 soniya, o‘zbek tilida ovozli.</p>
 
       <div class="video-main">
         <video id="main-video" controls preload="metadata" poster="/pitch/media/demo-poster.jpg" playsinline>
@@ -40,15 +40,15 @@
         </video>
       </div>
 
-      <div class="chapters" aria-label="Video bo‘limlari">
-        <button type="button" data-t="0"><b>0:00</b><span>Kirish</span></button>
-        <button type="button" data-t="5.0"><b>0:05</b><span>Muammo</span></button>
-        <button type="button" data-t="16.9"><b>0:16</b><span>Yechim</span></button>
-        <button type="button" data-t="28.4"><b>0:28</b><span>Veb-kabinet</span></button>
-        <button type="button" data-t="93.6"><b>1:33</b><span>O‘quvchi ilovasi</span></button>
-        <button type="button" data-t="173.4"><b>2:53</b><span>O‘qituvchi ilovasi</span></button>
-        <button type="button" data-t="223.9"><b>3:43</b><span>Direktor ilovasi</span></button>
-        <button type="button" data-t="274.4"><b>4:34</b><span>Yakun</span></button>
+      <div class="chapters" aria-label="Video bo‘limlari" data-i18n-attrs="aria-label" data-ru-aria-label="Главы видео" data-en-aria-label="Video chapters">
+        <button type="button" data-t="0"><b>0:00</b><span data-ru="Вступление" data-en="Intro">Kirish</span></button>
+        <button type="button" data-t="5.0"><b>0:05</b><span data-ru="Проблема" data-en="Problem">Muammo</span></button>
+        <button type="button" data-t="16.9"><b>0:16</b><span data-ru="Решение" data-en="Solution">Yechim</span></button>
+        <button type="button" data-t="28.4"><b>0:28</b><span data-ru="Веб-кабинет" data-en="Web dashboard">Veb-kabinet</span></button>
+        <button type="button" data-t="93.6"><b>1:33</b><span data-ru="Приложение ученика" data-en="Student app">O‘quvchi ilovasi</span></button>
+        <button type="button" data-t="173.4"><b>2:53</b><span data-ru="Приложение преподавателя" data-en="Teacher app">O‘qituvchi ilovasi</span></button>
+        <button type="button" data-t="223.9"><b>3:43</b><span data-ru="Приложение директора" data-en="Director app">Direktor ilovasi</span></button>
+        <button type="button" data-t="274.4"><b>4:34</b><span data-ru="Итоги" data-en="Wrap-up">Yakun</span></button>
       </div>
     </div>
   </section>
@@ -56,37 +56,37 @@
   <section class="block">
     <div class="wrap two">
       <div class="desc">
-        <div class="num">Demo-video tavsifi</div>
-        <h2 style="margin:12px 0 18px">Videoda nima ko‘rsatilgan</h2>
-        <p>Video o‘quv markazlarining muammosidan boshlanadi: arizalar chatlarda yo‘qoladi, jadval Excelda, to‘lovlar daftarda yuritiladi. Keyin Yagona bularni qanday qilib bitta tizimga jamlashi ko‘rsatiladi.</p>
-        <p><b>Veb-kabinet</b> — ishlayotgan prototipdan olingan ekranlar:</p>
+        <div class="num" data-ru="Описание демо-видео" data-en="About the demo video">Demo-video tavsifi</div>
+        <h2 style="margin:12px 0 18px" data-ru="Что показано в видео" data-en="What the video shows">Videoda nima ko‘rsatilgan</h2>
+        <p data-ru="Видео начинается с проблемы учебных центров: заявки теряются в чатах, расписание ведётся в Excel, оплаты — в тетради. Затем показано, как Yagona объединяет всё это в одну систему." data-en="The video opens with the learning centers’ problem: leads get lost in chats, the schedule lives in Excel and payments in a notebook. Then it shows how Yagona brings all of this into one system.">Video o‘quv markazlarining muammosidan boshlanadi: arizalar chatlarda yo‘qoladi, jadval Excelda, to‘lovlar daftarda yuritiladi. Keyin Yagona bularni qanday qilib bitta tizimga jamlashi ko‘rsatiladi.</p>
+        <p data-ru="&lt;b&gt;Веб-кабинет&lt;/b&gt; — экраны из работающего прототипа:" data-en="&lt;b&gt;Web dashboard&lt;/b&gt; — screens from the working prototype:"><b>Veb-kabinet</b> — ishlayotgan prototipdan olingan ekranlar:</p>
         <ul>
-          <li>bosh sahifa: faol o‘quvchilar, bugungi darslar, tushum va qarzlar;</li>
-          <li>lidlar voronkasi va sinov darslari;</li>
-          <li>o‘quvchilar, guruhlar va haftalik dars jadvali;</li>
-          <li>to‘lovlar, moliya va bildirishnomalar.</li>
+          <li data-ru="главная: активные ученики, занятия на сегодня, выручка и долги;" data-en="home page: active students, today’s classes, revenue and debts;">bosh sahifa: faol o‘quvchilar, bugungi darslar, tushum va qarzlar;</li>
+          <li data-ru="воронка лидов и пробные уроки;" data-en="lead funnel and trial lessons;">lidlar voronkasi va sinov darslari;</li>
+          <li data-ru="ученики, группы и расписание на неделю;" data-en="students, groups and the weekly class schedule;">o‘quvchilar, guruhlar va haftalik dars jadvali;</li>
+          <li data-ru="оплаты, финансы и уведомления." data-en="payments, finance and notifications.">to‘lovlar, moliya va bildirishnomalar.</li>
         </ul>
-        <p style="margin-top:14px"><b>Mobil ilovalar</b> — Figma’dagi dizayn asosida:</p>
+        <p style="margin-top:14px" data-ru="&lt;b&gt;Мобильные приложения&lt;/b&gt; — по дизайну из Figma:" data-en="&lt;b&gt;Mobile apps&lt;/b&gt; — based on the Figma designs:"><b>Mobil ilovalar</b> — Figma’dagi dizayn asosida:</p>
         <ul>
-          <li><b>o‘quvchi:</b> QR-kod bilan davomat, uy vazifalari, daftarni skanerlash, imtihonlar, bilimlar xaritasi, ilovada to‘lov;</li>
-          <li><b>o‘qituvchi:</b> «Dars» rejimi, QR-davomat, tezkor so‘rovnoma, svayp bilan tekshirish, ota-onalarga hisobot;</li>
-          <li><b>direktor:</b> «Puls», moliya, qarzdorlar, kassa prognozi, arizalar voronkasi, ketish xavfi.</li>
+          <li data-ru="&lt;b&gt;ученик:&lt;/b&gt; посещаемость по QR-коду, домашние задания, сканирование тетради, экзамены, карта знаний, оплата в приложении;" data-en="&lt;b&gt;student:&lt;/b&gt; QR-code attendance, homework, notebook scanning, exams, knowledge map, in-app payment;"><b>o‘quvchi:</b> QR-kod bilan davomat, uy vazifalari, daftarni skanerlash, imtihonlar, bilimlar xaritasi, ilovada to‘lov;</li>
+          <li data-ru="&lt;b&gt;преподаватель:&lt;/b&gt; режим «Урок», QR-посещаемость, быстрый опрос, проверка свайпом, отчёты родителям;" data-en="&lt;b&gt;teacher:&lt;/b&gt; “Lesson” mode, QR attendance, quick polls, swipe-to-grade, reports to parents;"><b>o‘qituvchi:</b> «Dars» rejimi, QR-davomat, tezkor so‘rovnoma, svayp bilan tekshirish, ota-onalarga hisobot;</li>
+          <li data-ru="&lt;b&gt;директор:&lt;/b&gt; «Пульс», финансы, должники, прогноз кассы, воронка заявок, риск ухода." data-en="&lt;b&gt;director:&lt;/b&gt; “Pulse”, finance, debtors, cash forecast, lead funnel, churn risk."><b>direktor:</b> «Puls», moliya, qarzdorlar, kassa prognozi, arizalar voronkasi, ketish xavfi.</li>
         </ul>
       </div>
 
       <div class="proto">
-        <div class="num">Ishlayotgan prototip</div>
-        <h2 style="font-size:1.9rem">Veb-kabinetni o‘zingiz sinab ko‘ring</h2>
-        <p style="color:var(--muted)">Prototip brauzerda ishlaydi va demo-ma’lumotlar bilan to‘ldirilgan: «Registon Academy» markazi, 50 dan ortiq o‘quvchi, 10 guruh, jadval, to‘lovlar va CRM. Istalgan parol bilan kirish mumkin.</p>
+        <div class="num" data-ru="Работающий прототип" data-en="Working prototype">Ishlayotgan prototip</div>
+        <h2 style="font-size:1.9rem" data-ru="Попробуйте веб-кабинет сами" data-en="Try the web dashboard yourself">Veb-kabinetni o‘zingiz sinab ko‘ring</h2>
+        <p style="color:var(--muted)" data-ru="Прототип работает в браузере и заполнен демо-данными: центр «Registon Academy», более 50 учеников, 10 групп, расписание, оплаты и CRM. Войти можно с любым паролем." data-en="The prototype runs in the browser and is filled with demo data: the “Registon Academy” center, 50+ students, 10 groups, a schedule, payments and CRM. You can sign in with any password.">Prototip brauzerda ishlaydi va demo-ma’lumotlar bilan to‘ldirilgan: «Registon Academy» markazi, 50 dan ortiq o‘quvchi, 10 guruh, jadval, to‘lovlar va CRM. Istalgan parol bilan kirish mumkin.</p>
         <a class="btn btn-primary" href="/login" style="justify-self:start">yagona-demo.vercel.app ↗</a>
         <table class="logins">
-          <tr><td>Direktor</td><td><code>owner@registon.demo</code></td></tr>
-          <tr><td>Administrator</td><td><code>admin@registon.demo</code></td></tr>
-                    <tr><td>O‘qituvchi</td><td><code>teacher@registon.demo</code></td></tr>
-          <tr><td>O‘quvchi</td><td><code>student@registon.demo</code></td></tr>
-          <tr><td>Parol</td><td>istalgan</td></tr>
+          <tr><td data-ru="Директор" data-en="Director">Direktor</td><td><code>owner@registon.demo</code></td></tr>
+          <tr><td data-ru="Администратор" data-en="Administrator">Administrator</td><td><code>admin@registon.demo</code></td></tr>
+                    <tr><td data-ru="Преподаватель" data-en="Teacher">O‘qituvchi</td><td><code>teacher@registon.demo</code></td></tr>
+          <tr><td data-ru="Ученик" data-en="Student">O‘quvchi</td><td><code>student@registon.demo</code></td></tr>
+          <tr><td data-ru="Пароль" data-en="Password">Parol</td><td data-ru="любой" data-en="any">istalgan</td></tr>
         </table>
-        <p class="note">Kirish sahifasida tilni O‘zbekcha, Русский yoki English qilib tanlash mumkin.</p>
+        <p class="note" data-ru="На странице входа можно выбрать язык: O‘zbekcha, Русский или English." data-en="On the sign-in page you can choose O‘zbekcha, Русский or English.">Kirish sahifasida tilni O‘zbekcha, Русский yoki English qilib tanlash mumkin.</p>
       </div>
     </div>
   </section>
@@ -94,9 +94,9 @@
   <section class="block">
     <div class="wrap two" style="align-items:center">
       <div>
-        <div class="num">Qo‘shimcha video</div>
-        <h2 style="margin:12px 0 14px">Muammo va yechim — 1 daqiqada</h2>
-        <p style="color:var(--muted)">O‘zbek tilida ovozli qisqa video: markazning bir kuni Yagonasiz va Yagona bilan.</p>
+        <div class="num" data-ru="Дополнительное видео" data-en="Bonus video">Qo‘shimcha video</div>
+        <h2 style="margin:12px 0 14px" data-ru="Проблема и решение — за 1 минуту" data-en="Problem and solution — in 1 minute">Muammo va yechim — 1 daqiqada</h2>
+        <p style="color:var(--muted)" data-ru="Короткое видео с озвучкой на узбекском: один день центра без Yagona и с Yagona." data-en="A short video narrated in Uzbek: a day at a center without Yagona and with it.">O‘zbek tilida ovozli qisqa video: markazning bir kuni Yagonasiz va Yagona bilan.</p>
       </div>
       <div class="video-small">
         <video controls preload="metadata" poster="/pitch/media/muammo-poster.jpg" playsinline>
@@ -109,11 +109,12 @@
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Yagona · O‘quv markazlari uchun platforma</span>
-    <span><a href="/pitch">Bosh sahifa</a> · <a href="/login">Prototip</a></span>
+    <span data-ru="© 2026 Yagona · Платформа для учебных центров" data-en="© 2026 Yagona · Platform for learning centers">© 2026 Yagona · O‘quv markazlari uchun platforma</span>
+    <span><a href="/pitch" data-ru="Главная" data-en="Home">Bosh sahifa</a> · <a href="/login" data-ru="Прототип" data-en="Prototype">Prototip</a></span>
   </div>
 </footer>
 
+<script src="/pitch/i18n.js"></script>
 <script>
   (function () {
     var v = document.getElementById("main-video");
