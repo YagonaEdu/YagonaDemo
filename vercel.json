@@ -3,5 +3,10 @@
   "installCommand": "npm install",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "rewrites": [
+    { "source": "/", "destination": "/pitch/index.html" },
+    { "source": "/demo", "destination": "/pitch/demo/index.html" },
+    { "source": "/demo/", "destination": "/pitch/demo/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
 }

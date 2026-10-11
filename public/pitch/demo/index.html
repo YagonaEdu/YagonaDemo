@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yagona — Demo</title>
+<meta name="description" content="Yagona demo-videosi, uning tavsifi va ishlayotgan prototip havolasi.">
+<link rel="icon" type="image/png" href="/pitch/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Marcellus&display=swap">
+<link rel="stylesheet" href="/pitch/style.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/pitch/img/logo-256.png" alt="">Yagona</a>
+    <nav class="nav" aria-label="Bo‘limlar">
+      <a href="/#muammo">Muammo → Yechim</a>
+      <a href="/#jamoa">Jamoa</a>
+      <a href="/#yol-xaritasi">Yo‘l xaritasi</a>
+      <a href="/#reja">Reja</a>
+      <a href="/demo" aria-current="page">Demo</a>
+    </nav>
+    <a class="btn btn-primary" href="/login">Prototip ↗</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero lattice" style="padding-block:56px 48px">
+    <div class="wrap">
+      <div class="kicker">Demo</div>
+      <h1 style="margin-top:12px">Yagona qanday ishlaydi</h1>
+      <p class="lead">Veb-kabinet va uchta mobil ilova: o‘quvchi, o‘qituvchi va markaz egasi uchun. Video 4 daqiqa 7 soniya.</p>
+
+      <div class="video-main">
+        <video id="main-video" controls preload="metadata" poster="/pitch/media/demo-poster.jpg" playsinline>
+          <source src="/pitch/media/yagona-demo.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="chapters" aria-label="Video bo‘limlari">
+        <button type="button" data-t="0"><b>0:00</b><span>Kirish</span></button>
+        <button type="button" data-t="6"><b>0:06</b><span>Muammo</span></button>
+        <button type="button" data-t="16"><b>0:16</b><span>Yechim</span></button>
+        <button type="button" data-t="26"><b>0:26</b><span>Veb-kabinet</span></button>
+        <button type="button" data-t="82"><b>1:22</b><span>O‘quvchi ilovasi</span></button>
+        <button type="button" data-t="143.6"><b>2:23</b><span>O‘qituvchi ilovasi</span></button>
+        <button type="button" data-t="189.4"><b>3:09</b><span>Markaz egasi ilovasi</span></button>
+        <button type="button" data-t="240.4"><b>4:00</b><span>Yakun</span></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap two">
+      <div class="desc">
+        <div class="num">Demo-video tavsifi</div>
+        <h2 style="margin:12px 0 18px">Videoda nima ko‘rsatilgan</h2>
+        <p>Video o‘quv markazlarining muammosidan boshlanadi: arizalar chatlarda yo‘qoladi, jadval Excelda, to‘lovlar daftarda yuritiladi. Keyin Yagona bularni qanday qilib bitta tizimga jamlashi ko‘rsatiladi.</p>
+        <p><b>Veb-kabinet</b> — ishlayotgan prototipdan olingan ekranlar:</p>
+        <ul>
+          <li>bosh sahifa: faol o‘quvchilar, bugungi darslar, tushum va qarzlar;</li>
+          <li>lidlar voronkasi va sinov darslari;</li>
+          <li>o‘quvchilar, guruhlar va haftalik dars jadvali;</li>
+          <li>to‘lovlar, moliya va bildirishnomalar.</li>
+        </ul>
+        <p style="margin-top:14px"><b>Mobil ilovalar</b> — Figma’dagi dizayn asosida:</p>
+        <ul>
+          <li><b>o‘quvchi:</b> QR-kod bilan davomat, uy vazifalari, daftarni skanerlash, imtihonlar, bilimlar xaritasi, ilovada to‘lov;</li>
+          <li><b>o‘qituvchi:</b> «Dars» rejimi, QR-davomat, tezkor so‘rovnoma, svayp bilan tekshirish, ota-onalarga hisobot;</li>
+          <li><b>markaz egasi:</b> «Puls», moliya, qarzdorlar, kassa prognozi, arizalar voronkasi, ketish xavfi.</li>
+        </ul>
+      </div>
+
+      <div class="proto">
+        <div class="num">Ishlayotgan prototip</div>
+        <h2 style="font-size:1.9rem">Veb-kabinetni o‘zingiz sinab ko‘ring</h2>
+        <p style="color:var(--muted)">Prototip brauzerda ishlaydi va demo-ma’lumotlar bilan to‘ldirilgan: «Registon Academy» markazi, 50 dan ortiq o‘quvchi, 10 guruh, jadval, to‘lovlar va CRM. Istalgan parol bilan kirish mumkin.</p>
+        <a class="btn btn-primary" href="/login" style="justify-self:start">yagona-demo.vercel.app ↗</a>
+        <table class="logins">
+          <tr><td>Markaz egasi</td><td><code>owner@registon.demo</code></td></tr>
+          <tr><td>Administrator</td><td><code>admin@registon.demo</code></td></tr>
+          <tr><td>Buxgalter</td><td><code>accountant@registon.demo</code></td></tr>
+          <tr><td>O‘qituvchi</td><td><code>teacher@registon.demo</code></td></tr>
+          <tr><td>O‘quvchi</td><td><code>student@registon.demo</code></td></tr>
+          <tr><td>Parol</td><td>istalgan</td></tr>
+        </table>
+        <p class="note">Kirish sahifasida tilni O‘zbekcha, Русский yoki English qilib tanlash mumkin.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap two" style="align-items:center">
+      <div>
+        <div class="num">Qo‘shimcha video</div>
+        <h2 style="margin:12px 0 14px">Muammo va yechim — 1 daqiqada</h2>
+        <p style="color:var(--muted)">O‘zbek tilida ovozli qisqa video: markazning bir kuni Yagonasiz va Yagona bilan.</p>
+      </div>
+      <div class="video-small">
+        <video controls preload="metadata" poster="/pitch/media/muammo-poster.jpg" playsinline>
+          <source src="/pitch/media/yagona-muammo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Yagona · O‘quv markazlari uchun platforma</span>
+    <span><a href="/">Bosh sahifa</a> · <a href="/login">Prototip</a></span>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var v = document.getElementById("main-video");
+    document.querySelectorAll(".chapters button").forEach(function (b) {
+      b.addEventListener("click", function () {
+        v.currentTime = parseFloat(b.dataset.t);
+        var p = v.play(); if (p && p.catch) p.catch(function () {});
+        v.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
+  })();
+</script>
+<script src="/pitch/chatbot.js"></script>
+</body>
+</html>
