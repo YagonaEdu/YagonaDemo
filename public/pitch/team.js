@@ -1,9 +1,8 @@
 /* Jamoa a'zolari — shu ro'yxatni tahrirlang. todo: true bo'lgan kartalar to'ldirilmagan deb belgilanadi. */
 window.TEAM = [
-  { name: "[Ism Familiya]", role: "Backend dasturchi", skills: ["Python", "Django REST", "PostgreSQL"], links: { GitHub: "https://github.com/SaidkamolA" }, todo: true },
-  { name: "[Ism Familiya]", role: "Frontend dasturchi", skills: ["React", "Vite", "UI"], links: { GitHub: "https://github.com/YagonaEdu" }, todo: true },
-  { name: "[Ism Familiya]", role: "Mobil dasturchi", skills: ["React Native", "Expo"], links: {}, todo: true },
-  { name: "[Ism Familiya]", role: "UI/UX dizayner", skills: ["Figma", "Dizayn-tizim"], links: {}, todo: true },
+  { name: "A’zamov Saidkamolxon", role: "Dasturchi", skills: ["Python", "Django REST", "React", "React Native"], links: { GitHub: "https://github.com/SaidkamolA" } },
+  { name: "Kadirov Xotam", role: "Dizayner", skills: ["Figma", "UI/UX", "Dizayn-tizim"], links: {} },
+  { name: "Ganiev Murodxon", role: "Loyiha menejeri", skills: ["Loyiha boshqaruvi", "Rejalashtirish"], links: {} },
 ];
 (function () {
   var root = document.getElementById("team");
