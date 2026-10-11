@@ -3,13 +3,13 @@
 (function () {
   var QA = [
     { q: "Yagona nima?", k: ["nima", "yagona", "haqida", "platforma", "что"],
-      a: "Yagona — o‘quv markazlari uchun yagona platforma: CRM, o‘quvchilar, guruhlar, dars jadvali, davomat va to‘lovlar bitta tizimda. Xodimlar veb-kabinetda, o‘quvchi, o‘qituvchi va markaz egasi esa mobil ilovada ishlaydi." },
+      a: "Yagona — o‘quv markazlari uchun yagona platforma: CRM, o‘quvchilar, guruhlar, dars jadvali, davomat va to‘lovlar bitta tizimda. Xodimlar veb-kabinetda, o‘quvchi, o‘qituvchi va direktor esa mobil ilovada ishlaydi." },
     { q: "Qaysi muammoni hal qiladi?", k: ["muammo", "hal", "nega", "kerak", "проблем"],
-      a: "Markazlar arizalarni chatlarda, jadvalni Excelda, to‘lovlarni daftarda yuritadi. Arizalar yo‘qoladi, qarzlar kuzatilmaydi, egasi aniq raqamlarni ko‘rmaydi. Yagona bularni bitta tizimga jamlaydi." },
-    { q: "Kimlar uchun?", k: ["kim", "kimlar", "rol", "egasi", "admin", "o‘qituvchi", "oqituvchi", "o'qituvchi"],
-      a: "Beshta rol uchun: markaz egasi, administrator, buxgalter, o‘qituvchi va o‘quvchi. Ota-onalar hisobotni ilova, Telegram yoki SMS orqali oladi." },
+      a: "Markazlar arizalarni chatlarda, jadvalni Excelda, to‘lovlarni daftarda yuritadi. Arizalar yo‘qoladi, qarzlar kuzatilmaydi, direktor aniq raqamlarni ko‘rmaydi. Yagona bularni bitta tizimga jamlaydi." },
+    { q: "Kimlar uchun?", k: ["kim", "kimlar", "rol", "egasi", "direktor", "admin", "o‘qituvchi", "oqituvchi", "o'qituvchi"],
+      a: "To‘rtta rol uchun: direktor, administrator, o‘qituvchi va o‘quvchi. Ota-onalar hisobotni ilova, Telegram yoki SMS orqali oladi." },
     { q: "Raqobatchilardan farqi?", k: ["farq", "raqobat", "modme", "crm", "boshqa", "excel", "отлич"],
-      a: "Ko‘p CRM faqat administratorni yopadi. Yagona barcha rollarni bitta bazada bog‘laydi: o‘quvchi va o‘qituvchi uchun o‘z ilovalari, QR-davomat, «Dars» rejimi, ota-onalarga hisobot va egasi uchun analitika." },
+      a: "Ko‘p CRM faqat administratorni yopadi. Yagona barcha rollarni bitta bazada bog‘laydi: o‘quvchi va o‘qituvchi uchun o‘z ilovalari, QR-davomat, «Dars» rejimi, ota-onalarga hisobot va direktor uchun analitika." },
     { q: "Qanday texnologiyalar?", k: ["texnolog", "stack", "django", "react", "backend", "texnika"],
       a: "Backend: Python, Django REST Framework, PostgreSQL, Redis, Celery. Veb: React va Vite. Mobil: React Native va Expo. Dizayn: Figma." },
     { q: "AI qayerda ishlatiladi?", k: ["ai", "sun’iy", "suniy", "intellekt", "ии", "model"],
