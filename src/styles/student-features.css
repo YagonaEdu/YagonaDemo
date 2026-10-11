@@ -1,0 +1,101 @@
+/* Student cabinet: home dashboard widgets, homework, materials, notifications. */
+
+
+
+
+
+.st-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.st-chip {
+  min-height: 38px;
+  padding: 0 14px;
+  border: 1px solid var(--y-border-strong);
+  border-radius: 99px;
+  background: var(--y-surface);
+  color: var(--y-text-muted);
+  font: 650 13px var(--y-font);
+  cursor: pointer;
+}
+.st-chip:hover { border-color: var(--y-blue-400); color: var(--y-navy-900); }
+.st-chip.is-active { background: var(--y-teal-700); border-color: var(--y-teal-700); color: #fff; }
+.st-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 260px;
+  max-width: 420px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--y-border-strong);
+  border-radius: var(--y-radius-btn);
+  background: var(--y-surface);
+  color: var(--y-text-soft);
+}
+.st-search:focus-within { border-color: var(--y-blue-600); box-shadow: var(--y-focus); }
+.st-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: 500 14px var(--y-font);
+  color: var(--y-text);
+}
+
+/* Homework: see student-learning.css */
+
+/* Materials */
+.st-mat-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.st-mat-list { display: grid; gap: 12px; }
+.st-mat {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: start;
+  padding: 16px 18px;
+  border: 1px solid var(--y-border);
+  border-radius: var(--y-radius-card);
+  background: var(--y-surface);
+  box-shadow: var(--y-shadow-sm);
+}
+.st-mat-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 52px;
+  border-radius: 24px 24px 12px 12px;
+  background: var(--y-blue-50);
+  color: var(--y-blue-600);
+}
+.st-mat.is-video .st-mat-icon { background: var(--y-danger-bg); color: var(--y-danger); }
+.st-mat.is-link .st-mat-icon { background: var(--y-teal-100); color: var(--y-teal-700); }
+.st-mat.is-text .st-mat-icon { background: #eef0ff; color: #4b4fc4; }
+.st-mat-body { display: grid; gap: 3px; min-width: 0; }
+.st-mat-kicker { font-size: 12px; font-weight: 650; color: var(--y-text-muted); }
+.st-shell .st-mat-body h3 { font-size: 15.5px; color: var(--y-navy-900); }
+.st-mat-body p { margin: 0; font-size: 13px; color: var(--y-text-muted); }
+.st-mat-date { font-size: 12px; color: var(--y-text-soft); }
+.st-mat-text {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--y-surface-2);
+  font-size: 13.5px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+
+
+@keyframes st-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 767px) {
+          .st-mat { grid-template-columns: 44px minmax(0, 1fr); }
+  .st-mat-icon { width: 44px; height: 48px; }
+  .st-mat-action { grid-column: 2; }
+    
+          
+              }
+

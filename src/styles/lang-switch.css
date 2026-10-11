@@ -1,0 +1,81 @@
+/* UZ / RU / EN picker (components/layout/LanguageSwitch). */
+.lang-switch { position: relative; flex: none; }
+.lang-switch-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: none;
+  color: #4a5a82;
+  font: 600 13px "Inter", "Manrope", system-ui, sans-serif;
+  cursor: pointer;
+}
+.lang-switch-btn:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(45, 107, 234, 0.35); }
+
+/* Login (Figma: globe · «Русский» · chevron) */
+.lang-switch.is-panel .lang-switch-btn { height: 34px; padding: 0 10px; border-radius: 10px; }
+.lang-switch.is-panel .lang-switch-btn:hover { background: #f4f6fb; }
+
+/* Cabinet top bar */
+.lang-switch.is-compact .lang-switch-btn {
+  gap: 6px;
+  height: 44px;
+  padding: 0 10px 0 12px;
+  border: 1px solid #e6eaf3;
+  border-radius: 12px;
+  background: #fff;
+  color: #14275e;
+}
+.lang-switch.is-compact .lang-switch-btn:hover { background: #f7f9fc; }
+.lang-switch.is-compact .lang-switch-btn svg:first-child { color: #6b7a9e; }
+
+.lang-switch-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 60;
+  min-width: 200px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  border: 1px solid #e6eaf3;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(20, 39, 94, 0.16);
+}
+.lang-switch-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: #14275e;
+  font: 500 14px "Inter", "Manrope", system-ui, sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+.lang-switch-menu button:hover { background: #f7f9fc; }
+.lang-switch-menu button.is-current { background: #eaf1fe; color: #2d6bea; font-weight: 600; }
+.lang-switch-code {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 22px;
+  border-radius: 6px;
+  background: #eef1f6;
+  color: #4a5a82;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+.is-current .lang-switch-code { background: #2d6bea; color: #fff; }
+.lang-switch-name { flex: 1; }
+
+@media (max-width: 767px) {
+  .lang-switch.is-compact .lang-switch-btn { height: 40px; padding: 0 8px; }
+  .lang-switch.is-compact .lang-switch-btn svg:last-child { display: none; }
+}

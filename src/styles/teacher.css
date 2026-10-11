@@ -1,0 +1,86 @@
+/* ============================================================
+   Teacher cabinet refresh — scoped to .shell-education.is-teacher
+   (owner/admin/accountant keep their look). Built on tokens.css.
+   ============================================================ */
+
+
+/* ── Teacher main surface ─────────────────────────────── */
+.shell-education.is-teacher .main { background: var(--y-bg); }
+
+
+
+
+
+
+/* ── New teacher pages: attendance + schedule (ta-*) ── */
+.ta-page { display: grid; gap: 16px; max-width: 1180px; font-family: var(--y-font); }
+.ta-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.ta-head h1 { margin: 0; font-size: 24px; font-weight: 750; color: var(--y-navy-900); letter-spacing: -0.02em; }
+.ta-head p { margin: 4px 0 0; color: var(--y-text-muted); font-size: 13.5px; }
+.ta-hint { margin: 0; font-size: 12.5px; color: var(--y-text-muted); }
+.ta-layout { display: grid; gap: 14px; padding-bottom: 80px; }
+.ta-note { margin: 0; padding: 14px 16px; border-radius: 14px; background: var(--y-muted-bg); color: var(--y-text-muted); }
+
+
+
+.ta-card {
+  display: grid;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 1px solid var(--y-border);
+  border-radius: var(--y-radius-card);
+  background: var(--y-surface);
+  box-shadow: var(--y-shadow-sm);
+}
+
+.ta-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px 14px;
+  padding: 10px 8px 10px 12px;
+  border-bottom: 1px solid var(--y-border);
+  border-left: 3px solid transparent;
+  transition: background var(--y-dur) var(--y-ease);
+}
+.ta-row:last-child { border-bottom: 0; }
+.ta-row.is-changed { background: var(--y-blue-50); border-left-color: var(--y-blue-600); }
+
+.ta-opt:focus-visible, .ta-comment-btn:focus-visible { outline: none; box-shadow: var(--y-focus); }
+.ta-comment-btn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--y-text-soft);
+  cursor: pointer;
+}
+.ta-comment-btn:hover, .ta-comment-btn.has-comment { color: var(--y-blue-600); background: var(--y-blue-50); }
+.ta-comment-input {
+  grid-column: 1 / -1;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--y-border-strong);
+  border-radius: 10px;
+  font: 500 13.5px var(--y-font);
+}
+
+
+@media (max-width: 760px) {
+  .ta-row { grid-template-columns: minmax(0, 1fr); }
+      .ta-comment-btn { width: 44px; height: 44px; }
+    }
+
+/* Staff shell on mobile: the horizontal nav row must scroll inside itself
+   instead of widening the whole page (grid "1fr" cannot shrink below content). */
+@media (max-width: 960px) {
+  .shell.shell-education { grid-template-columns: minmax(0, 1fr); }
+  .shell-education .sidebar,
+  .shell-education .main,
+  .shell-education .nav,
+  .shell-education .nav .nav-group { min-width: 0; }
+  }
+

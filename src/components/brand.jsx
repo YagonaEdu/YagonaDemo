@@ -1,0 +1,29 @@
+export const LOGO_SRC = "/yagona-logo.png";
+export const MARK_SRC = "/yagona-mark.png";
+
+export function YagonaLogo({ size = 88, alt = "Yagona", className = "", mark = false }) {
+  return (
+    <img
+      src={mark ? MARK_SRC : LOGO_SRC}
+      alt={alt}
+      width={size}
+      height={size}
+      className={`yagona-logo ${className}`.trim()}
+      draggable="false"
+    />
+  );
+}
+
+export function BrandMark({ title = "Yagona", subtitle, compact = false, iconOnly = false }) {
+  return (
+    <div className={`brand-mark${compact ? " compact" : ""}${iconOnly ? " icon-only" : ""}`.trim()}>
+      <YagonaLogo size={compact || iconOnly ? 28 : 32} mark />
+      {iconOnly ? null : (
+        <div>
+          <strong>{title}</strong>
+          {subtitle ? <span>{subtitle}</span> : null}
+        </div>
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,133 @@
+/* Login screen and centre picker (Figma «00 · Вход»). */
+export const login = {
+  heroTitle: {
+    ru: "Управляйте учебным центром легко",
+    uz: "O‘quv markazini oson boshqaring",
+    en: "Run your learning centre with ease",
+  },
+  heroLead: {
+    ru: "Расписание, группы, оплаты, задания и аналитика — в одной платформе для вашего центра.",
+    uz: "Dars jadvali, guruhlar, to‘lovlar, topshiriqlar va tahlil — markazingiz uchun yagona platformada.",
+    en: "Schedule, groups, payments, assignments and analytics — one platform for your centre.",
+  },
+  welcomeBack: { ru: "С возвращением, {name}", uz: "Xush kelibsiz, {name}", en: "Welcome back, {name}" },
+  welcomeBackPlain: { ru: "С возвращением", uz: "Xush kelibsiz", en: "Welcome back" },
+  pickerLead: {
+    ru: "Один аккаунт — все ваши учебные центры. Выберите, в какой кабинет войти сейчас.",
+    uz: "Bitta akkaunt — barcha o‘quv markazlaringiz. Hozir qaysi kabinetga kirishni tanlang.",
+    en: "One account for all your centres. Choose which workspace to open now.",
+  },
+  tagline: { ru: "CRM для учебных центров", uz: "O‘quv markazlari uchun CRM", en: "CRM for learning centres" },
+  featureCentersTitle: {
+    ru: "Несколько центров — один аккаунт",
+    uz: "Bir nechta markaz — bitta akkaunt",
+    en: "Several centres, one account",
+  },
+  featureCentersText: {
+    ru: "переключайтесь между центрами в два клика",
+    uz: "markazlar o‘rtasida ikki bosishda o‘ting",
+    en: "switch between centres in two clicks",
+  },
+  featureRolesTitle: { ru: "Доступ по ролям", uz: "Rollar bo‘yicha kirish", en: "Role-based access" },
+  featureRolesText: {
+    ru: "владелец, администратор, бухгалтер, учитель, ученик",
+    uz: "egasi, administrator, buxgalter, o‘qituvchi, o‘quvchi",
+    en: "owner, administrator, accountant, teacher, student",
+  },
+  featureSecureTitle: { ru: "Защищённый вход", uz: "Xavfsiz kirish", en: "Secure sign-in" },
+  featureSecureText: {
+    ru: "данные центров изолированы друг от друга",
+    uz: "markazlar ma’lumotlari bir-biridan ajratilgan",
+    en: "each centre’s data is kept separate",
+  },
+  title: { ru: "Вход в Yagona", uz: "Yagona’ga kirish", en: "Sign in to Yagona" },
+  lead: {
+    ru: "Введите телефон или логин, выданный вашим учебным центром",
+    uz: "O‘quv markazingiz bergan telefon raqam yoki loginni kiriting",
+    en: "Enter the phone number or login your centre gave you",
+  },
+  identifierLabel: { ru: "Телефон или логин", uz: "Telefon yoki login", en: "Phone or login" },
+  passwordLabel: { ru: "Пароль", uz: "Parol", en: "Password" },
+  passwordPlaceholder: { ru: "Ваш пароль", uz: "Parolingiz", en: "Your password" },
+  showPassword: { ru: "Показать пароль", uz: "Parolni ko‘rsatish", en: "Show password" },
+  hidePassword: { ru: "Скрыть пароль", uz: "Parolni yashirish", en: "Hide password" },
+  forgot: { ru: "Забыли пароль?", uz: "Parolni unutdingizmi?", en: "Forgot password?" },
+  forgotHint: {
+    ru: "Пароль сбрасывает администратор вашего учебного центра. Временный пароль ученика — его телефон и сразу за ним название центра.",
+    uz: "Parolni o‘quv markazingiz administratori tiklaydi. O‘quvchining vaqtinchalik paroli — telefon raqami va undan keyin darhol markaz nomi.",
+    en: "Your centre’s administrator resets passwords. A student’s temporary password is their phone number followed by the centre name.",
+  },
+  rememberLogin: { ru: "Запомнить логин", uz: "Loginni eslab qolish", en: "Remember login" },
+  submit: { ru: "Войти", uz: "Kirish", en: "Sign in" },
+  submitting: { ru: "Входим…", uz: "Kirilmoqda…", en: "Signing in…" },
+  note: {
+    ru: "Регистрации нет — доступ выдаёт администратор вашего учебного центра.",
+    uz: "Ro‘yxatdan o‘tish yo‘q — kirishni o‘quv markazingiz administratori beradi.",
+    en: "There is no sign-up — your centre’s administrator gives you access.",
+  },
+  demo: { ru: "Демо:", uz: "Demo:", en: "Demo:" },
+  demoOwner: { ru: "владелец", uz: "egasi", en: "owner" },
+  demoTeacher: { ru: "учитель", uz: "o‘qituvchi", en: "teacher" },
+  demoStudent: { ru: "ученик", uz: "o‘quvchi", en: "student" },
+  demoAdmin: { ru: "ресепшен", uz: "resepshn", en: "reception" },
+  demoHint: {
+    ru: "Демо-версия без сервера: войти можно с любым логином и паролем.",
+    uz: "Serversiz demo: istalgan login va parol bilan kirish mumkin.",
+    en: "Demo without a server: any login and password will work.",
+  },
+  demoReset: { ru: "сбросить демо-данные", uz: "demo ma’lumotlarni tiklash", en: "reset demo data" },
+  demoResetDone: { ru: "Демо-данные сброшены.", uz: "Demo ma’lumotlar tiklandi.", en: "Demo data has been reset." },
+  footNote: {
+    ru: "Вход для сотрудников и учеников учебных центров",
+    uz: "O‘quv markazlari xodimlari va o‘quvchilari uchun kirish",
+    en: "Sign-in for staff and students of learning centres",
+  },
+  errorIdentifier: { ru: "Укажите телефон или логин", uz: "Telefon yoki loginni kiriting", en: "Enter your phone or login" },
+  errorPassword: { ru: "Введите пароль", uz: "Parolni kiriting", en: "Enter your password" },
+  errorCredentials: {
+    ru: "Неверный телефон, логин или пароль. Проверьте данные и попробуйте снова.",
+    uz: "Telefon, login yoki parol noto‘g‘ri. Ma’lumotlarni tekshirib, qaytadan urinib ko‘ring.",
+    en: "Wrong phone, login or password. Check the details and try again.",
+  },
+  errorNoAccess: {
+    ru: "Нет доступа: учётная запись не привязана ни к одному учебному центру.",
+    uz: "Kirish yo‘q: akkaunt hech bir o‘quv markaziga bog‘lanmagan.",
+    en: "No access: this account is not linked to any learning centre.",
+  },
+  errorNetwork: {
+    ru: "Нет связи с сервером. Проверьте интернет и попробуйте ещё раз.",
+    uz: "Server bilan aloqa yo‘q. Internetni tekshirib, qayta urinib ko‘ring.",
+    en: "Cannot reach the server. Check your connection and try again.",
+  },
+  switchAccount: { ru: "Сменить аккаунт", uz: "Akkauntni almashtirish", en: "Switch account" },
+  pickTitle: { ru: "Выберите учебный центр", uz: "O‘quv markazini tanlang", en: "Choose a learning centre" },
+  pickLeadTeacher: {
+    ru: "Вы преподаёте в {centers}. Кабинет откроется в соответствии с вашей ролью.",
+    uz: "Siz {centers} dars berasiz. Kabinet rolingizga mos ochiladi.",
+    en: "You teach at {centers}. The workspace opens for your role.",
+  },
+  pickLeadStaff: {
+    ru: "Вы работаете в {centers}. Кабинет откроется в соответствии с вашей ролью.",
+    uz: "Siz {centers} ishlaysiz. Kabinet rolingizga mos ochiladi.",
+    en: "You work at {centers}. The workspace opens for your role.",
+  },
+  opening: { ru: "Открываем…", uz: "Ochilmoqda…", en: "Opening…" },
+  rememberChoice: {
+    ru: "Запомнить выбор и входить сразу",
+    uz: "Tanlovni eslab qolish va darhol kirish",
+    en: "Remember my choice and go straight in",
+  },
+  missingCenter: {
+    ru: "Не видите свой центр? Обратитесь к администратору",
+    uz: "Markazingizni ko‘rmayapsizmi? Administratorga murojaat qiling",
+    en: "Don’t see your centre? Contact your administrator",
+  },
+};
+
+export const roles = {
+  owner: { ru: "Владелец", uz: "Egasi", en: "Owner" },
+  admin: { ru: "Администратор", uz: "Administrator", en: "Administrator" },
+  teacher: { ru: "Преподаватель", uz: "O‘qituvchi", en: "Teacher" },
+  accountant: { ru: "Бухгалтер", uz: "Buxgalter", en: "Accountant" },
+  student: { ru: "Ученик", uz: "O‘quvchi", en: "Student" },
+};

@@ -1,0 +1,127 @@
+/* ============================================================
+   Teacher cabinet · homework and vocabulary controls.
+   Extends the existing ta-* sheets; colours from tokens.css.
+   ============================================================ */
+
+.ta-pre { white-space: pre-wrap; }
+
+/* Switches */
+.ta-switches { display: grid; gap: 10px; margin-top: 12px; }
+.ta-switch {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--y-border);
+  border-radius: 12px;
+  background: var(--y-surface);
+  cursor: pointer;
+}
+.ta-switch input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.ta-switch-track {
+  position: relative;
+  flex: 0 0 auto;
+  width: 40px;
+  height: 24px;
+  margin-top: 1px;
+  border-radius: 999px;
+  background: var(--y-border-strong);
+  transition: background var(--y-dur) var(--y-ease);
+}
+.ta-switch-track::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(3, 27, 101, 0.25);
+  transition: transform var(--y-dur) var(--y-ease);
+}
+.ta-switch input:checked + .ta-switch-track { background: var(--y-teal-700); }
+.ta-switch input:checked + .ta-switch-track::after { transform: translateX(16px); }
+.ta-switch input:focus-visible + .ta-switch-track { box-shadow: var(--y-focus); }
+.ta-switch-copy { display: grid; gap: 1px; }
+.ta-switch-copy strong { font-size: 14px; color: var(--y-navy-900); }
+.ta-switch-copy em { font-style: normal; font-size: 12.5px; color: var(--y-text-muted); }
+
+/* Materials */
+.ta-link-add { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto; gap: 8px; margin-bottom: 12px; }
+.ta-link-add input {
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--y-border-strong);
+  border-radius: 10px;
+  font: 500 14px var(--y-font);
+}
+.ta-link-add input:focus { outline: none; border-color: var(--y-blue-600); box-shadow: var(--y-focus); }
+.ta-materials { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.ta-materials li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 10px;
+  border: 1px solid var(--y-border);
+  border-radius: 10px;
+  font-size: 13.5px;
+}
+.ta-materials li.is-new { border-style: dashed; background: var(--y-surface-2); }
+.ta-materials li > a,
+.ta-materials li > span:nth-child(2) { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ta-materials li button {
+  border: 0;
+  background: none;
+  color: var(--y-danger);
+  font: 650 12.5px var(--y-font);
+  cursor: pointer;
+}
+.ta-materials-kind {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--y-blue-50);
+  color: var(--y-blue-600);
+  font-size: 11.5px;
+  font-weight: 700;
+}
+.ta-materials.is-plain li { grid-template-columns: minmax(0, 1fr); border: 0; padding: 2px 0; }
+
+/* Submission files in the grading drawer */
+.ta-files { display: grid; gap: 10px; margin: 12px 0 0; padding: 0; list-style: none; }
+.ta-file { display: grid; gap: 8px; padding: 10px; border: 1px solid var(--y-border); border-radius: 12px; }
+.ta-file-image { display: block; overflow: hidden; border-radius: 10px; background: var(--y-surface-2); }
+.ta-file-image img { display: block; width: 100%; max-height: 360px; object-fit: contain; }
+.ta-file-row { display: flex; align-items: center; gap: 10px; min-width: 0; font-size: 13.5px; }
+.ta-file-row a { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 650; }
+.ta-file-ext {
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: var(--y-teal-100);
+  color: var(--y-teal-700);
+  font-size: 11px;
+  font-weight: 800;
+}
+.ta-file audio { width: 100%; }
+.ta-grade-hint { margin-top: 4px; font-size: 12px; }
+
+@media (max-width: 767px) {
+  .ta-link-add { grid-template-columns: minmax(0, 1fr); }
+}
+
+.tm-vocab-row.tm-vocab-row-4 { grid-template-columns: 28px 1fr 1.2fr 0.9fr 1.3fr 32px; }
+.tm-form-grid.tm-form-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (max-width: 960px) {
+  .tm-vocab-row.tm-vocab-row-4 { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .tm-form-grid.tm-form-grid-3 { grid-template-columns: minmax(0, 1fr); }
+}

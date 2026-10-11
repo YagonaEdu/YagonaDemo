@@ -1,0 +1,70 @@
+/* ============================================================
+   Student cabinet · Главная (Figma 9:4) and Расписание (Figma 11:5).
+   Tokens only (tokens.css).
+   ============================================================ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ── Lesson dialog ───────────────────────────────────── */
+.st-lesson-dialog { width: min(480px, calc(100vw - 32px)); padding: 0; overflow: hidden; }
+.st-lesson-dialog-head {
+  display: grid;
+  gap: 4px;
+  padding: 22px 24px;
+  background-color: var(--y-navy-900);
+  background-image: var(--y-star-pattern);
+  background-size: 56px 56px;
+  background-blend-mode: soft-light;
+  color: #fff;
+}
+.st-lesson-dialog-head.is-past,
+.st-lesson-dialog-head.is-cancelled { background-color: var(--y-navy-700); }
+.st-lesson-dialog-head.is-upcoming { background-color: var(--y-teal-700); }
+.st-dialog .st-lesson-dialog-head h2 { margin: 0; color: #fff; }
+.st-lesson-dialog-head p { margin: 0; color: rgba(255, 255, 255, 0.8); }
+.st-lesson-dialog-state {
+  justify-self: start;
+  padding: 3px 10px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 12px;
+  font-weight: 800;
+}
+.st-lesson-facts { display: grid; gap: 10px; margin: 0; padding: 20px 24px 6px; list-style: none; }
+.st-lesson-facts li { display: flex; align-items: center; gap: 10px; font-size: 15px; }
+.st-lesson-facts .y-icon { color: var(--y-teal-700); }
+.st-lesson-topic { display: grid; gap: 6px; padding: 10px 24px 0; }
+.st-lesson-topic p { margin: 0; font-size: 15px; }
+.st-lesson-hw {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--y-blue-50);
+  color: var(--y-navy-900);
+  font-weight: 700;
+  text-decoration: none;
+}
+.st-lesson-dialog .st-dialog-actions { padding: 16px 24px 22px; }
+
+
+
+
+
+
+
+
+/* ── Responsive ──────────────────────────────────────── */

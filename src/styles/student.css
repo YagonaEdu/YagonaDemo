@@ -1,0 +1,118 @@
+/* ============================================================
+   Student cabinet — scoped under .st-shell, built on tokens.css
+   ============================================================ */
+
+.st-shell {
+  --st-side: 252px;
+  display: grid;
+  grid-template-columns: var(--st-side) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--y-bg);
+  color: var(--y-text);
+  font-family: var(--y-font);
+}
+.st-shell *:focus-visible { outline: none; box-shadow: var(--y-focus); border-radius: 10px; }
+.st-shell h1, .st-shell h2, .st-shell h3 { margin: 0; letter-spacing: -0.02em; }
+
+
+
+
+
+
+.st-icon-btn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+.st-icon-btn:hover { background: rgba(229, 72, 77, 0.22); color: #fff; }
+
+.st-content {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 28px 32px 48px;
+  animation: st-rise 220ms var(--y-ease) both;
+}
+@keyframes st-rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.st-page { display: grid; gap: 18px; }
+.st-muted { color: var(--y-text-muted); font-size: 13.5px; margin: 0; }
+.st-text-link { color: var(--y-blue-600); font-weight: 650; font-size: 13px; text-decoration: none; }
+.st-text-link:hover { text-decoration: underline; }
+
+/* ── Cards ────────────────────────────────────────────── */
+.st-card {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+  padding: 20px 22px;
+  border: 1px solid var(--y-border);
+  border-radius: var(--y-radius-card);
+  background: var(--y-surface);
+  box-shadow: var(--y-shadow);
+  min-width: 0;
+}
+.st-card-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.st-card-head h2 { font-size: 15px; font-weight: 700; color: var(--y-navy-900); }
+.st-card-skeleton { gap: 12px; }
+.st-card .empty-state { padding: 18px 8px; }
+.st-card .empty-state h3 { font-size: 15px; color: var(--y-navy-900); margin: 0; }
+.st-card .empty-state p { margin: 0; color: var(--y-text-muted); font-size: 13px; max-width: 34ch; }
+
+
+
+
+
+/* Ring */
+.st-ring { position: relative; display: grid; place-items: center; flex: 0 0 auto; }
+.st-ring svg { position: absolute; inset: 0; }
+.st-ring-track { fill: none; stroke: var(--y-teal-100); }
+.st-ring-value { fill: none; stroke: var(--y-teal-600); stroke-linecap: round; transition: stroke-dashoffset 600ms var(--y-ease); }
+.st-ring.is-warning .st-ring-track { stroke: var(--y-warning-bg); }
+.st-ring.is-warning .st-ring-value { stroke: var(--y-warning-accent); }
+.st-ring-label { position: relative; display: grid; justify-items: center; text-align: center; }
+.st-ring-label strong { font-size: 28px; font-weight: 800; color: var(--y-navy-900); line-height: 1.1; }
+.st-ring-label span { font-size: 11.5px; color: var(--y-text-muted); max-width: 80px; }
+
+
+
+.st-field { display: grid; gap: 6px; flex: 1 1 200px; max-width: 280px; }
+.st-field span { font-size: 12.5px; font-weight: 650; color: var(--y-text-muted); }
+.st-field select {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--y-border-strong);
+  border-radius: var(--y-radius-btn);
+  background: var(--y-surface);
+  color: var(--y-text);
+  font: 600 14px var(--y-font);
+}
+
+
+
+
+
+
+
+
+@media (max-width: 767px) {
+  .st-shell { grid-template-columns: minmax(0, 1fr); }
+                
+  .st-content { padding: 16px 16px calc(92px + env(safe-area-inset-bottom)); }
+  
+        
+        .st-card { padding: 16px; }
+    .st-field { max-width: none; }
+          }
+
+@media (prefers-reduced-motion: reduce) {
+  .st-content, .st-ring-value { animation: none; transition: none; }
+}

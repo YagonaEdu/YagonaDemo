@@ -1,0 +1,345 @@
+/* ============================================================
+   Teacher cabinet — drawers and modals.
+   They are portalled into <body>, so everything is scoped to body.tx-cabinet
+   (set by TeacherShell). One look for every panel: floating side sheet on desktop,
+   bottom sheet on phones, sticky header with a real close button, sticky footer.
+   ============================================================ */
+
+/* ── Close button (components/ui CloseButton) ─────────────── */
+.y-close-btn {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid #e6eaf3;
+  border-radius: 10px;
+  background: #fff;
+  color: #4a5a82;
+  cursor: pointer;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+.y-close-btn:hover:not(:disabled) { border-color: #dce2ee; background: #f4f6fb; color: #14275e; }
+.y-close-btn:active:not(:disabled) { transform: scale(0.96); }
+.y-close-btn:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(45, 107, 234, 0.35); }
+.y-close-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* ── Backdrop ─────────────────────────────────────────────── */
+body.tx-cabinet .drawer-backdrop {
+  padding: 12px;
+  background: rgba(20, 39, 94, 0.4);
+  font-family: var(--fx-font);
+  color: var(--fx-navy);
+}
+
+/* ── Side sheets ──────────────────────────────────────────── */
+body.tx-cabinet .drawer {
+  height: 100%;
+  max-height: none;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 24px 64px rgba(20, 39, 94, 0.24);
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  animation: tx-sheet-in 240ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+body.tx-cabinet .teacher-drawer { width: min(560px, 100%); }
+body.tx-cabinet .teacher-drawer-wide { width: min(780px, 100%); }
+body.tx-cabinet .tg-student-drawer { width: min(560px, 100%); }
+
+@keyframes tx-sheet-in {
+  from { transform: translateX(32px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes tx-pop-in {
+  from { transform: translateY(12px) scale(0.98); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes tx-rise-in {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+
+/* Drawers whose whole body scrolls: the header sticks to the top edge. */
+body.tx-cabinet .ta-detail-drawer,
+body.tx-cabinet .ta-grade-drawer,
+body.tx-cabinet .tm-detail-drawer,
+body.tx-cabinet .tg-student-drawer { padding: 0 24px 24px; }
+body.tx-cabinet .drawer > .tg-detail { padding: 0 24px 24px; }
+
+/* ── Centred dialogs (type picker, profile, notifications) ── */
+body.tx-cabinet .drawer-backdrop:has(> .tm-modal, > .tp-sheet, > .tn-sheet) {
+  justify-content: center;
+  align-items: center;
+}
+body.tx-cabinet .tm-modal,
+body.tx-cabinet .tp-sheet,
+body.tx-cabinet .tn-sheet {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 48px);
+  padding: 0;
+  border: 0;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 24px 64px rgba(20, 39, 94, 0.24);
+  overflow: hidden;
+  animation: tx-pop-in 200ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+body.tx-cabinet .tm-modal { width: min(680px, 100%); }
+body.tx-cabinet .tp-sheet { width: min(540px, 100%); }
+body.tx-cabinet .tn-sheet { width: min(600px, 100%); }
+body.tx-cabinet .tp-sheet-body,
+body.tx-cabinet .tn-sheet-body { flex: 1; min-height: 0; padding: 20px 24px 0; overflow: auto; }
+
+/* ── Headers ──────────────────────────────────────────────── */
+body.tx-cabinet :is(
+  .ta-create-head, .ta-detail-head, .ta-grade-head, .tm-modal-head,
+  .tp-sheet-head, .tn-sheet-head, .tg-student-head, .drawer .tg-detail-head
+) {
+  position: sticky;
+  top: 0;
+  z-index: 6;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--fx-border);
+  background: #fff;
+}
+/* Headers inside padded drawers span the full width. */
+body.tx-cabinet :is(.ta-detail-drawer, .ta-grade-drawer, .tm-detail-drawer) > header:first-child,
+body.tx-cabinet .tg-student-drawer .tg-student-head,
+body.tx-cabinet .drawer > .tg-detail .tg-detail-head { margin: 0 -24px 20px; }
+
+body.tx-cabinet :is(.ta-create-head, .ta-detail-head, .ta-grade-head, .tm-modal-head, .tp-sheet-head, .tn-sheet-head) h2,
+body.tx-cabinet .tg-student-head h3 {
+  margin: 0;
+  color: var(--fx-navy);
+  font: 700 20px/1.25 var(--fx-font);
+  letter-spacing: -0.3px;
+}
+body.tx-cabinet .drawer-backdrop :is(.tg-muted, .muted) { color: var(--fx-muted); font-size: 13px; line-height: 1.45; }
+body.tx-cabinet .ta-create-head .tg-muted,
+body.tx-cabinet :is(.tp-sheet-head, .tn-sheet-head) .muted { margin: 4px 0 0; }
+body.tx-cabinet :is(.ta-create-eyebrow, .tm-detail-type) {
+  margin: 0 0 6px;
+  color: var(--fx-blue);
+  font: 700 11px var(--fx-font);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+/* ── Bodies ───────────────────────────────────────────────── */
+body.tx-cabinet .ta-create-body,
+body.tx-cabinet .tm-form-body { padding: 20px 24px; gap: 16px; }
+body.tx-cabinet .tm-modal > :not(header) { padding: 20px 24px 24px; }
+
+/* Form sections inside sheets */
+body.tx-cabinet .drawer-backdrop :is(.ta-section, .ta-form-card) {
+  border: 1px solid var(--fx-border);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: none;
+}
+
+/* Field rows share the width evenly whatever the number of fields. */
+body.tx-cabinet .drawer-backdrop .ta-field-row {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+body.tx-cabinet .drawer-backdrop .ta-field-row .ta-field { margin-bottom: 0; }
+body.tx-cabinet .drawer-backdrop .ta-field { gap: 6px; margin-bottom: 14px; }
+
+/* ── Fields ───────────────────────────────────────────────── */
+body.tx-cabinet .drawer-backdrop .field-label,
+body.tx-cabinet .drawer-backdrop label > span:first-child:not(.y-switch):not([class*="toggle"]) {
+  color: var(--fx-navy);
+  font: 600 13px var(--fx-font);
+  letter-spacing: 0;
+  text-transform: none;
+}
+body.tx-cabinet .drawer-backdrop :is(input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="range"]), select, textarea) {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #dce2ee;
+  border-radius: 12px;
+  background-color: #fff;
+  color: var(--fx-navy);
+  font: 400 14px var(--fx-font);
+  box-shadow: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+body.tx-cabinet .drawer-backdrop textarea { min-height: 96px; padding-top: 12px; line-height: 1.5; }
+body.tx-cabinet .drawer-backdrop :is(input, select, textarea)::placeholder { color: #97a3bf; }
+body.tx-cabinet .drawer-backdrop :is(input, select, textarea):focus {
+  outline: none;
+  border-color: var(--fx-blue);
+  box-shadow: 0 0 0 3px rgba(45, 107, 234, 0.14);
+}
+body.tx-cabinet .drawer-backdrop :is(input[type="checkbox"], input[type="radio"]) {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--fx-blue);
+}
+
+/* ── Footers ──────────────────────────────────────────────── */
+body.tx-cabinet :is(.ta-create-foot, .tp-sheet-foot, .tn-sheet-foot) {
+  position: sticky;
+  bottom: 0;
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 0;
+  padding: 14px 24px;
+  border-top: 1px solid var(--fx-border);
+  background: #fff;
+}
+body.tx-cabinet .tp-sheet-foot,
+body.tx-cabinet .tn-sheet-foot { margin: 20px -24px 0; }
+body.tx-cabinet .tp-sheet-foot { justify-content: flex-end; }
+body.tx-cabinet .tn-sheet-foot .muted { margin: 0; }
+body.tx-cabinet :is(.ta-create-foot-main, .tn-sheet-actions) { display: flex; gap: 8px; }
+body.tx-cabinet .drawer-backdrop .btn { min-height: 42px; padding: 0 18px; }
+
+/* ── Material type picker ─────────────────────────────────── */
+body.tx-cabinet .tm-type-grid { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+body.tx-cabinet .tm-type-tile {
+  gap: 4px;
+  min-height: 128px;
+  padding: 16px;
+  border: 1px solid var(--fx-border);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--fx-navy);
+  font-family: var(--fx-font);
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+body.tx-cabinet .tm-type-tile:hover {
+  border-color: var(--fx-blue);
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(45, 107, 234, 0.12);
+  transform: translateY(-2px);
+}
+body.tx-cabinet .tm-type-tile:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(45, 107, 234, 0.35); }
+body.tx-cabinet .tm-type-tile strong { margin-top: 8px; font-size: 15px; font-weight: 700; }
+body.tx-cabinet .tm-type-tile span:last-child { color: var(--fx-muted); font-size: 13px; line-height: 1.4; }
+body.tx-cabinet .tm-type-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border-radius: 12px;
+  background: var(--fx-blue-bg);
+  color: var(--fx-blue);
+}
+body.tx-cabinet .tm-type-icon.is-teal { background: var(--fx-teal-bg); color: var(--fx-teal-text); }
+body.tx-cabinet .tm-type-icon.is-amber { background: var(--fx-amber-bg); color: var(--fx-amber); }
+body.tx-cabinet .tm-type-icon.is-red { background: var(--fx-red-bg); color: var(--fx-red-text); }
+body.tx-cabinet .tm-type-icon.is-violet { background: var(--fx-violet-bg); color: var(--fx-violet); }
+
+/* ── Phones: bottom sheets ────────────────────────────────── */
+@media (max-width: 767px) {
+  body.tx-cabinet .drawer-backdrop,
+  body.tx-cabinet .drawer-backdrop:has(> .tm-modal, > .tp-sheet, > .tn-sheet) {
+    align-items: flex-end;
+    justify-content: center;
+    padding: 12px 0 0;
+  }
+  body.tx-cabinet .drawer,
+  body.tx-cabinet :is(.teacher-drawer, .teacher-drawer-wide, .tg-student-drawer) {
+    width: 100%;
+    max-width: none;
+    height: calc(100dvh - 12px);
+    border-radius: 20px 20px 0 0;
+    animation-name: tx-rise-in;
+  }
+  body.tx-cabinet :is(.tm-modal, .tp-sheet, .tn-sheet) {
+    width: 100%;
+    max-height: calc(100dvh - 12px);
+    border-radius: 20px 20px 0 0;
+    animation-name: tx-rise-in;
+  }
+  body.tx-cabinet :is(
+    .ta-create-head, .ta-detail-head, .ta-grade-head, .tm-modal-head,
+    .tp-sheet-head, .tn-sheet-head, .tg-student-head, .drawer .tg-detail-head
+  ) { padding: 18px 16px 14px; }
+  body.tx-cabinet .ta-create-head::before,
+  body.tx-cabinet .tm-modal-head::before,
+  body.tx-cabinet .tp-sheet-head::before,
+  body.tx-cabinet .tn-sheet-head::before,
+  body.tx-cabinet .ta-detail-head::before,
+  body.tx-cabinet .ta-grade-head::before,
+  body.tx-cabinet .tg-student-head::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    margin-left: -20px;
+    border-radius: 2px;
+    background: #dce2ee;
+  }
+  body.tx-cabinet :is(.ta-create-head, .ta-detail-head, .ta-grade-head, .tm-modal-head, .tp-sheet-head, .tn-sheet-head) h2,
+  body.tx-cabinet .tg-student-head h3 { font-size: 18px; }
+  body.tx-cabinet :is(.ta-detail-drawer, .ta-grade-drawer, .tm-detail-drawer, .tg-student-drawer),
+  body.tx-cabinet .drawer > .tg-detail { padding: 0 16px 16px; }
+  body.tx-cabinet :is(.ta-detail-drawer, .ta-grade-drawer, .tm-detail-drawer) > header:first-child,
+  body.tx-cabinet .tg-student-drawer .tg-student-head,
+  body.tx-cabinet .drawer > .tg-detail .tg-detail-head { margin: 0 -16px 16px; }
+  body.tx-cabinet .ta-create-body,
+  body.tx-cabinet .tm-form-body,
+  body.tx-cabinet .tm-modal > :not(header) { padding: 16px; }
+  body.tx-cabinet .tp-sheet-body,
+  body.tx-cabinet .tn-sheet-body { padding: 16px 16px 0; }
+  body.tx-cabinet :is(.ta-create-foot, .tp-sheet-foot, .tn-sheet-foot) {
+    flex-wrap: wrap;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+  }
+  body.tx-cabinet .tp-sheet-foot,
+  body.tx-cabinet .tn-sheet-foot { margin: 16px -16px 0; }
+  body.tx-cabinet :is(.ta-create-foot-main, .tn-sheet-actions) { flex: 1 1 100%; }
+  body.tx-cabinet :is(.ta-create-foot-main, .tn-sheet-actions, .tp-sheet-foot) .btn { flex: 1; }
+  body.tx-cabinet .ta-create-foot > .btn-ghost:first-child { order: 2; flex: 1 1 100%; }
+  body.tx-cabinet .tm-type-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  body.tx-cabinet .tm-type-tile { min-height: 112px; padding: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.tx-cabinet :is(.drawer, .tm-modal, .tp-sheet, .tn-sheet) { animation: none; }
+}
+
+/* Grading panel: actions as one even column */
+body.tx-cabinet .ta-grade-actions { display: grid; gap: 8px; }
+body.tx-cabinet .ta-grade-actions .btn { width: 100%; justify-content: center; }
+
+/* Small confirm dialog (reminders) — same look as the other dialogs */
+body.tx-cabinet .ta-modal-backdrop {
+  padding: 16px;
+  background: rgba(20, 39, 94, 0.4);
+  font-family: var(--fx-font, "Inter", system-ui, sans-serif);
+}
+body.tx-cabinet .ta-modal {
+  width: min(440px, 100%);
+  padding: 20px 24px 24px;
+  border: 0;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 24px 64px rgba(20, 39, 94, 0.24);
+  animation: tx-pop-in 200ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+body.tx-cabinet .ta-modal-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+body.tx-cabinet .ta-modal-head h3 { margin: 6px 0 0; color: #14275e; font-size: 18px; font-weight: 700; }
+body.tx-cabinet .ta-modal-meta { gap: 10px; margin-bottom: 20px; padding: 14px 16px; border-radius: 14px; background: #f7f9fc; }
+body.tx-cabinet .ta-modal-meta dt { color: #6b7a9e; font-size: 12px; }
+body.tx-cabinet .ta-modal-meta dd { color: #14275e; font-size: 14px; }
+body.tx-cabinet .ta-modal-actions .btn { min-height: 42px; }

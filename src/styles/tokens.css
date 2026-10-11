@@ -1,0 +1,57 @@
+/* ============================================================
+   Yagona design tokens — single source for brand values.
+   Colours sampled from public/yagona-logo.png:
+   navy arch + right wing, bright-blue left wing, teal ornament/orb.
+   Dark theme: override these under [data-theme="dark"].
+   ============================================================ */
+
+:root {
+  --y-navy-900: #031b65;
+  --y-navy-700: #032473;
+  --y-blue-600: #0069f9;
+  --y-blue-400: #4d94ff;
+  --y-blue-50: #eef4ff;
+  --y-teal-700: #00766f; /* text & white-on-teal fills: Teal 600 is too light for 4.5:1 */
+  --y-teal-600: #00ada3;
+  --y-teal-400: #2fc7bd;
+  --y-teal-100: #e3f6f5;
+
+  --y-bg: #f4f7fc;
+  --y-surface: #ffffff;
+  --y-surface-2: #f8fafe;
+  --y-border: #e3e9f4;
+  --y-border-strong: #cdd7e8;
+  --y-text: #0b1736;
+  --y-text-muted: #5b6b8c;
+  --y-text-soft: #8a98b4;
+
+  --y-danger: #c9353a; /* text-safe; fills use --y-danger-accent */
+  --y-danger-accent: #e5484d;
+  --y-danger-bg: #fdecec;
+  --y-warning: #b26a00;
+  --y-warning-accent: #f5a524;
+  --y-warning-bg: #fff4e0;
+  --y-success: var(--y-teal-700);
+  --y-success-bg: var(--y-teal-100);
+  --y-muted-bg: #eef1f6;
+
+  --y-gradient-brand: linear-gradient(135deg, #0069f9 0%, #031b65 100%);
+  --y-gradient-hero: linear-gradient(140deg, #031b65 0%, #032473 55%, #0057d6 100%);
+  --y-gradient-orb: radial-gradient(circle at 30% 30%, #2fc7bd, #00766f);
+
+  --y-radius-card: 20px;
+  --y-radius-md: 14px;
+  --y-radius-btn: 12px;
+  --y-radius-pill: 999px;
+  --y-shadow: 0 8px 24px rgba(3, 27, 101, 0.06);
+  --y-shadow-sm: 0 2px 8px rgba(3, 27, 101, 0.06);
+  --y-shadow-lg: 0 18px 40px rgba(3, 27, 101, 0.14);
+  --y-focus: 0 0 0 3px rgba(0, 105, 249, 0.32);
+
+  --y-font: "Manrope", "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --y-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --y-dur: 180ms;
+
+  /* Eight-pointed star lattice, echoing the logo ornament. White strokes for dark hero blocks. */
+  --y-star-pattern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1.2'%3E%3Cpath d='M28 10l5.3 12.7L46 28l-12.7 5.3L28 46l-5.3-12.7L10 28l12.7-5.3z'/%3E%3Crect x='17' y='17' width='22' height='22' transform='rotate(45 28 28)'/%3E%3Crect x='17' y='17' width='22' height='22'/%3E%3Ccircle cx='28' cy='28' r='4'/%3E%3Cpath d='M0 0l6 6M56 0l-6 6M0 56l6-6M56 56l-6-6'/%3E%3C/g%3E%3C/svg%3E");
+}

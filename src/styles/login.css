@@ -1,0 +1,440 @@
+/* ============================================================
+   Login & centre picker — Figma «00 · Вход» (Учитель · Вход / Выбор центра).
+   1440×960 frame: 640px navy brand panel, 800px white panel.
+   ============================================================ */
+
+.lg-screen {
+  --lg-navy: #14275e;
+  --lg-blue: #2d6bea;
+  --lg-blue-bg: #eaf1fe;
+  --lg-muted: #6b7a9e;
+  --lg-soft: #97a3bf;
+  --lg-line: #dce2ee;
+  --lg-line-soft: #e6eaf3;
+  --lg-teal: #12998b;
+  --lg-teal-text: #0e8174;
+  --lg-teal-bg: #e3f6f3;
+  --lg-red: #cf3439;
+  --lg-font: "Inter", "Manrope", -apple-system, "Segoe UI", system-ui, sans-serif;
+
+  display: grid;
+  grid-template-columns: minmax(440px, 44.45%) minmax(0, 1fr);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #f4f6fb;
+  color: var(--lg-navy);
+  font-family: var(--lg-font);
+}
+.lg-screen :is(button, input) { font-family: inherit; }
+/* Global h1/h2 set their own colour; this stylesheet loads before styles.css. */
+.lg-screen :is(h1, h2) { color: inherit; }
+.lg-screen.is-booting > .lg-brand,
+.lg-screen.is-booting > .lg-panel { opacity: 0; }
+.lg-screen.is-ready > .lg-brand,
+.lg-screen.is-ready > .lg-panel { animation: rise 480ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+.lg-screen.is-ready > .lg-panel { animation-delay: 80ms; }
+
+/* ── Brand panel ──────────────────────────────────────────── */
+.lg-brand {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 640px;
+  overflow: hidden;
+  background: var(--lg-navy);
+  color: #fff;
+}
+.lg-pattern { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+.lg-arch { position: absolute; display: block; max-width: none; pointer-events: none; }
+.lg-arch-outer { right: -60px; bottom: -36px; width: 420px; height: 560px; }
+.lg-arch-inner { right: 30px; bottom: -36px; width: 300px; height: 420px; }
+
+.lg-brand-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 56px;
+}
+.lg-logo { display: flex; align-items: center; gap: 14px; }
+.lg-logo img { flex: none; display: block; }
+.lg-logo span { display: grid; }
+.lg-logo strong { font-size: 24px; font-weight: 700; line-height: 29px; letter-spacing: -0.4px; }
+.lg-logo small { color: #8fa3d6; font-size: 12px; font-weight: 600; line-height: 14.5px; letter-spacing: 1px; text-transform: uppercase; }
+
+.lg-hero { max-width: 481px; margin-top: auto; }
+.lg-hero h1 { margin: 0; font-size: 44px; font-weight: 800; line-height: 1.1; letter-spacing: -1.4px; }
+.lg-hero p { margin: 15px 0 0; color: #c5d0ee; font-size: 16px; line-height: 1.6; }
+
+.lg-features { display: grid; gap: 18px; margin: 43px 0 0; padding: 0; list-style: none; }
+.lg-features li { display: flex; align-items: center; gap: 14px; }
+.lg-feature-icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+}
+.lg-feature-icon img { display: block; }
+.lg-features span:last-child { display: grid; gap: 1px; }
+.lg-features strong { font-size: 15px; font-weight: 700; line-height: 18.2px; }
+.lg-features small { color: #a9b7de; font-size: 13px; line-height: 15.7px; }
+
+.lg-brand-copy { margin: 40px 0 0; color: #8fa3d6; font-size: 13px; line-height: 15.7px; }
+
+/* ── Right panel ──────────────────────────────────────────── */
+.lg-panel { min-width: 0; background: #fff; }
+.lg-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 40px 64px;
+}
+.lg-topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 34px; }
+.lg-topbar.is-end { justify-content: flex-end; }
+.lg-body {
+  width: min(440px, 100%);
+  margin: auto;
+  padding: 32px 0;
+}
+.lg-body-wide { width: min(600px, 100%); }
+
+.lg-logo-tile {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 24px;
+  border-radius: 18px;
+  background: var(--lg-blue-bg);
+}
+.lg-logo-tile img { display: block; }
+.lg-title { margin: 0; font-size: 32px; font-weight: 800; line-height: 1.2; letter-spacing: -1px; }
+.lg-title-sm { font-size: 30px; }
+.lg-lead { margin: 8px 0 0; color: var(--lg-muted); font-size: 15px; line-height: 1.25; }
+
+/* Form */
+.lg-form { display: grid; gap: 18px; margin-top: 25px; }
+.lg-field { display: grid; gap: 7px; }
+.lg-field label,
+.lg-label-row label { color: var(--lg-navy); font-size: 13px; font-weight: 600; line-height: 15.7px; }
+.lg-label-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.lg-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  border: 1px solid var(--lg-line);
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+.lg-input:focus-within { border-color: var(--lg-blue); box-shadow: 0 0 0 1px var(--lg-blue), 0 0 0 4px rgba(45, 107, 234, 0.12); }
+.lg-input.has-error { border-color: var(--lg-red); box-shadow: 0 0 0 3px rgba(207, 52, 57, 0.1); }
+.lg-input > img { flex: none; margin-left: 14px; }
+/* Beats the global `input:not(…):not(…)` rule, which would add a second border. */
+.lg-screen .lg-input input:not([type="checkbox"]),
+.lg-screen .lg-input input:not([type="checkbox"]):hover,
+.lg-screen .lg-input input:not([type="checkbox"]):focus {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  padding: 0 14px 0 10px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+  color: var(--lg-navy);
+  font-size: 14px;
+  outline: none;
+}
+.lg-input input::placeholder { color: var(--lg-soft); }
+.lg-input input[type="password"] { letter-spacing: 2px; }
+.lg-input input[type="password"]::placeholder { letter-spacing: 0; }
+.lg-input input:disabled { color: var(--lg-muted); }
+.lg-eye {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-right: 6px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+.lg-eye:hover { background: #f4f6fb; }
+.lg-eye.is-on { background: var(--lg-blue-bg); }
+.lg-eye:focus-visible,
+.lg-link:focus-visible,
+.lg-back:focus-visible,
+.lg-center:focus-visible,
+.lg-submit:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(45, 107, 234, 0.35); }
+.lg-field-error { margin: 0; color: var(--lg-red); font-size: 12px; font-weight: 500; }
+.lg-hint {
+  margin: 4px 0 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: var(--lg-blue-bg);
+  color: #3d4b70;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.lg-link {
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--lg-blue);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 15.7px;
+  cursor: pointer;
+}
+.lg-link:hover { text-decoration: underline; }
+
+.lg-alert {
+  padding: 12px 14px;
+  border: 1px solid #f6c9cb;
+  border-radius: 12px;
+  background: #fdecec;
+  color: var(--lg-red);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* Checkbox (Figma: 20px, radius 6) */
+.lg-check { position: relative; display: inline-flex; align-items: center; gap: 10px; justify-self: start; color: var(--lg-navy); font-size: 14px; cursor: pointer; }
+.lg-check input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.lg-check-box {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #c9d1e3;
+  border-radius: 6px;
+  background: #fff;
+  transition: background 150ms ease, border-color 150ms ease;
+}
+.lg-check-box img { opacity: 0; }
+.lg-check input:checked + .lg-check-box { border-color: var(--lg-blue); background: var(--lg-blue); }
+.lg-check input:checked + .lg-check-box img { opacity: 1; }
+.lg-check input:focus-visible + .lg-check-box { box-shadow: 0 0 0 3px rgba(45, 107, 234, 0.35); }
+
+.lg-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 52px;
+  margin-top: 6px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--lg-blue);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 6px 8px rgba(45, 107, 234, 0.28);
+  cursor: pointer;
+  transition: filter 150ms ease, transform 150ms ease;
+}
+.lg-submit:hover:not(:disabled) { filter: brightness(1.06); }
+.lg-submit:active:not(:disabled) { transform: translateY(1px); }
+.lg-submit:disabled { cursor: progress; opacity: 0.85; }
+.lg-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: lg-spin 700ms linear infinite;
+}
+@keyframes lg-spin { to { transform: rotate(360deg); } }
+
+.lg-note {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 14px 16px;
+  border: 1px solid var(--lg-line-soft);
+  border-radius: 14px;
+  background: #f7f9fc;
+}
+.lg-note img { flex: none; }
+.lg-note p { margin: 0; color: var(--lg-muted); font-size: 13px; line-height: 1.5; }
+.lg-demo { margin: 16px 0 0; color: var(--lg-soft); font-size: 13px; }
+
+.lg-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  color: var(--lg-muted);
+  font-size: 12px;
+  line-height: 14.5px;
+}
+
+/* ── Centre picker ────────────────────────────────────────── */
+.lg-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 14px 0 12px;
+  border: 1px solid var(--lg-line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--lg-navy);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.lg-back:hover { background: #f7f9fc; }
+
+.lg-user { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.lg-user-avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--lg-teal);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+.lg-user > span:last-child { display: grid; gap: 1px; }
+.lg-user strong { font-size: 15px; font-weight: 700; line-height: 18.2px; }
+.lg-user small { color: var(--lg-muted); font-size: 13px; }
+
+.lg-centers { display: grid; gap: 12px; margin: 22px 0 20px; padding: 0; list-style: none; }
+.lg-center {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 86px;
+  padding: 16px 18px;
+  border: 1px solid var(--lg-line-soft);
+  border-radius: 16px;
+  background: #fff;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 150ms ease, background 150ms ease, box-shadow 150ms ease;
+}
+.lg-center.is-primary { padding: 15px 17px; border: 2px solid var(--lg-blue); background: #f3f7ff; }
+.lg-center:hover:not(:disabled) { border-color: var(--lg-blue); box-shadow: 0 8px 20px rgba(45, 107, 234, 0.1); }
+.lg-center:disabled { cursor: progress; }
+.lg-center-mark {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--lg-blue);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+}
+.lg-center-mark.is-amber { background: #e08a1e; }
+.lg-center-mark.is-teal { background: var(--lg-teal); }
+.lg-center-mark.is-violet { background: #7c5ce6; }
+.lg-center-copy { display: grid; gap: 2px; min-width: 0; }
+.lg-center-copy strong { overflow: hidden; font-size: 16px; font-weight: 700; line-height: 19.4px; text-overflow: ellipsis; white-space: nowrap; }
+.lg-center-copy small { overflow: hidden; color: var(--lg-muted); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.lg-center-meta { display: grid; justify-items: end; gap: 6px; }
+.lg-center-meta small { color: var(--lg-soft); font-size: 11px; white-space: nowrap; }
+.lg-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 10px;
+  border-radius: 11px;
+  background: var(--lg-teal-bg);
+  color: var(--lg-teal-text);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.lg-role::before { content: ""; width: 6px; height: 6px; border-radius: 3px; background: currentColor; }
+.lg-center-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--lg-line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--lg-navy);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.lg-center-go.is-primary { border-color: var(--lg-blue); background: var(--lg-blue); color: #fff; box-shadow: 0 6px 8px rgba(45, 107, 234, 0.28); }
+.lg-body-wide .lg-check { color: var(--lg-muted); font-size: 13px; }
+
+/* ── Tablet & phone ───────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .lg-screen { grid-template-columns: minmax(360px, 40%) minmax(0, 1fr); }
+  .lg-brand-inner { padding: 40px; }
+  .lg-hero h1 { font-size: 36px; }
+  .lg-page { padding: 32px 40px; }
+}
+
+@media (max-width: 860px) {
+  .lg-screen { grid-template-columns: minmax(0, 1fr); }
+  .lg-brand { position: relative; height: auto; min-height: 0; }
+  .lg-brand-inner { height: auto; padding: 24px 20px 28px; }
+  .lg-arch-outer { right: -150px; bottom: -330px; }
+  .lg-arch-inner { right: -40px; bottom: -280px; }
+  .lg-logo img { width: 40px; height: 40px; }
+  .lg-logo strong { font-size: 20px; line-height: 24px; }
+  .lg-logo small { font-size: 10px; }
+  .lg-hero { margin-top: 28px; }
+  .lg-hero h1 { font-size: 28px; letter-spacing: -0.8px; }
+  .lg-hero p { margin-top: 8px; font-size: 14px; line-height: 1.5; }
+  .lg-features,
+  .lg-brand-copy { display: none; }
+
+  .lg-panel { margin-top: -16px; border-radius: 20px 20px 0 0; position: relative; z-index: 1; }
+  .lg-page { min-height: 0; padding: 8px 20px 24px; }
+  .lg-topbar { min-height: 0; padding-top: 12px; }
+  .lg-body { width: 100%; max-width: 480px; padding: 20px 0 28px; }
+  .lg-logo-tile { display: none; }
+  .lg-title { font-size: 26px; }
+  .lg-title-sm { font-size: 24px; }
+  .lg-foot { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 560px) {
+  .lg-center {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 10px 12px;
+    padding: 14px;
+  }
+  .lg-center.is-primary { padding: 13px; }
+  .lg-center-mark { width: 44px; height: 44px; border-radius: 12px; font-size: 14px; }
+  .lg-center-meta { grid-column: 2; justify-items: start; }
+  .lg-center-meta small { display: none; }
+  .lg-center-go { grid-column: 1 / -1; justify-content: center; height: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lg-screen.is-ready > .lg-brand,
+  .lg-screen.is-ready > .lg-panel { animation: none; }
+}
